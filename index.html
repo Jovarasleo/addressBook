@@ -6,13 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
   </head>
   <body>
     <div id="app">
-      <label for="addressName">Vardas</label>
+      <label for="addressSearch"></label>
+      <input type="text" name="addressSearch" placeholder="search.." />
+      <label for="addressName">First Name</label>
       <input class="addressName" type="text" name="addressName" />
+      <label for="addressLastName">Last Name</label>
+      <input type="text" name="addressLastName" />
+      <label for="addressEmail">Email</label>
+      <input type="text" name="addressEmail" />
       <label for="addressPhone">Telefono numeris:</label>
-      <input class="addressPhone" type="tel" name="addressPhone" />
+      <input
+        class="addressPhone"
+        type="tel"
+        placeholder="+370123456789"
+        pattern="[+][3][7][0][0-9]{3}[0-9]{5}"
+        name="addressPhone"
+      />
       <button class="addButton">Add</button>
       <div class="output"></div>
     </div>

@@ -1,0 +1,22 @@
+#app {
+  display: grid;
+  width: 800px;
+  grid-template-rows: 1fr 2fr;
+}
+.favourite {
+  color: rgb(255, 217, 0);
+}
+.contact_container {
+  display: grid;
+  grid-template-columns: 10fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+.container--modify {
+  display: none;
+}
+.container--open {
+  display: block;
+}
+.output {
+  font-size: 1.2rem;
+}
