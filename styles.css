@@ -1,22 +1,75 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
 #app {
-  display: grid;
-  width: 800px;
-  grid-template-rows: 1fr 2fr;
+  width: 500px;
+  background-color: orange;
+  padding: 20px;
+  border-radius: 10px;
+}
+.top{
+  display: flex;
+  margin-bottom: 10px;
 }
 .favourite {
   color: rgb(255, 217, 0);
 }
 .contact_container {
+  border-radius: 5px;
   display: grid;
-  grid-template-columns: 10fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  justify-content: space-between;
+  background-color: whitesmoke;
+  margin-bottom: 5px;
+  padding: 5px;
+}
+.container--options{
+  text-align: right;
+  margin-right: 10px;
+}
+.contact_container div{
+  margin-left: 10px
 }
 .container--modify {
-  display: none;
+  display: grid;
+  grid-area: 2 / 1 / 2 / 3;
 }
 .container--open {
   display: block;
 }
 .output {
   font-size: 1.2rem;
+  height: 500px;
+  overflow-y: scroll;
+  padding:5px;
+}
+.newContact{
+  position: absolute;
+  top:90%;
+  left:90%;
+  transform: translate(-50%,-50%);
+}
+.newContact__form{
+  position: absolute;
+  flex-direction: column;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  width: 350px;
+  padding: 20px;
+  background-color: rgb(255, 196, 0);
+}
+.newContact{
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: tomato;
 }

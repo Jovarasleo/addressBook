@@ -15,23 +15,27 @@
   </head>
   <body>
     <div id="app">
-      <label for="addressSearch"></label>
-      <input type="text" name="addressSearch" placeholder="search.." />
-      <label for="addressName">First Name</label>
-      <input class="addressName" type="text" name="addressName" />
-      <label for="addressLastName">Last Name</label>
-      <input type="text" name="addressLastName" />
-      <label for="addressEmail">Email</label>
-      <input type="text" name="addressEmail" />
-      <label for="addressPhone">Telefono numeris:</label>
-      <input
-        class="addressPhone"
-        type="tel"
-        placeholder="+370123456789"
-        pattern="[+][3][7][0][0-9]{3}[0-9]{5}"
-        name="addressPhone"
-      />
-      <button class="addButton">Add</button>
+      <div class="top">
+        <label for="addressSearch"></label>
+        <input type="text" name="addressSearch" placeholder="search.." />
+        <button class="delButton">Delete checked</button></div>
+      <button class="newContact">New +</button>
+      <div class="newContact__form" style="display: none">
+        <label for="addressName">First Name</label>
+        <input class="addressName" type="text" name="addressName" />
+        <label for="addressLastName">Last Name</label>
+        <input class="addressLastName" type="text" name="addressLastName" />
+        <label for="addressEmail">Email</label>
+        <input class="addressEmail" type="text" name="addressEmail" />
+        <label for="addressPhone">Telefono numeris:</label>
+        <input
+          class="addressPhone"
+          type="tel"
+          placeholder="+370123456789"
+          pattern="[+][3][7][0][0-9]{3}[0-9]{5}"
+          name="addressPhone"
+        />
+        <button class="addButton">Add</button></div>
       <div class="output"></div>
     </div>
     <script src="index.js"></script>
