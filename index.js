@@ -22,9 +22,12 @@ search.addEventListener("input", () => {
 })
 function draw() {
   output.innerHTML = null;
-  addressArray.filter((address)=>{
+  addressArray.filter((address, index)=>{
       {if (address.name.includes(search.value, 0))
-        {return address}}}).forEach((address, index) => {
+        {
+          console.log(index);
+          return address}}}).forEach((address, index) => {
+          
     const createSpanName = document.createElement("span");
     const createSpanLastName = document.createElement("span");
     const createSpanNumber = document.createElement("span");
@@ -142,17 +145,6 @@ buttonAdd.addEventListener("click", () => {
     draw();
   }
 });
-//searching for contact from array
-// search.addEventListener("input", (event) => {
-//   console.log(event.target.value);
-//   let match = event.target.value.toLowerCase();
-//   let filteredArray = addressArray.filter((address) => {
-//     let nameLower = address.name.toLowerCase();
-//     if (address.phone.includes(match, 0) || nameLower.includes(match, 0)) {
-//       return address;}
-//   });
-//   draw(filteredArray);
-// });
 // deletes checked items
 deleteCheckedBtn.addEventListener("click",() => {
   let boxes = document.querySelectorAll("#app .checkbox");
