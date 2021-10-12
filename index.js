@@ -20,14 +20,15 @@ function show(element){
 search.addEventListener("input", () => {
   draw();
 })
+let realIndex = null;
 function draw() {
   output.innerHTML = null;
   addressArray.filter((address, index)=>{
-      {if (address.name.includes(search.value, 0))
+      {if (address.name.toLowerCase().includes(search.value.toLowerCase()))
         {
           console.log(index);
-          return address}}}).forEach((address, index) => {
-          
+          return address}}}).forEach((address) => {
+    realIndex = addressArray.indexOf(address);
     const createSpanName = document.createElement("span");
     const createSpanLastName = document.createElement("span");
     const createSpanNumber = document.createElement("span");
@@ -90,11 +91,13 @@ function draw() {
       createFavButton.innerHTML = '<i class="fas fa-star"></i>';
     }
     // delete function
-    createDelButton.addEventListener("click", () => {
-      addressArray.splice(index, 1);
-      localStorage.setItem("users", JSON.stringify(addressArray));
+      createDelButton.addEventListener("click", () => {
+        addressArray.splice(realIndex, 1);
+        localStorage.setItem("users", JSON.stringify(addressArray));
       draw();
-    });
+    })
+
+    
     // edit address
     createSaveButton.addEventListener("click", () => {
       editName = createInputName.value;
@@ -141,6 +144,7 @@ buttonAdd.addEventListener("click", () => {
       lastName: AddLastName,
       phone: Addphone,
       email: AddEmail,
+      fav: false,
     });
     draw();
   }
@@ -151,9 +155,9 @@ deleteCheckedBtn.addEventListener("click",() => {
   let boxesArr = Array.from(boxes)
   for (i = boxesArr.length - 1; i>=0; i--){
     if(boxesArr[i].checked) {
-    addressArray.splice(i, 1);
+    addressArray.splice(realIndex, 1);
+    draw()
     }}
-  draw()
 });
 
 // Add new address form (hide or show)
